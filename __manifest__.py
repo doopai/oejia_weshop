@@ -7,7 +7,7 @@
     'author': 'Oejia',
     'website': 'http://www.oejia.net/',
     'application': True,
-    'depends': ['base', 'mail', 'sale'],
+    'depends': ['base', 'mail', 'sale', 'l10n_cn_small_business'],
     'external_dependencies': {
         'python': ['Crypto', 'xmltodict'],
     },

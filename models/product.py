@@ -2,7 +2,7 @@
 import logging
 import json
 
-from openerp import models, fields, api
+from odoo import models, fields
 
 _logger = logging.getLogger(__name__)
 
@@ -72,8 +72,6 @@ class ProductProduct(models.Model):
     qty_public = fields.Integer('库存', default=0, required=True)
     attr_val_str = fields.Char('规格', compute='_compute_attr_val_str', store=True, default='')
 
-    @api.multi
-    @api.depends('attribute_value_ids')
     def _compute_attr_val_str(self):
         for obj in self:
             obj.attr_val_str = ''

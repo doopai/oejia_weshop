@@ -33,7 +33,6 @@
         <record id="oe_shipper_action_409" model="ir.actions.act_window">
             <field name="name">承运商</field>
             <field name="res_model">oe.shipper</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="view_ids"
@@ -43,6 +42,5 @@
                     ]"/>
         </record>
         <menuitem action="oe_shipper_action_409" id="oe_shipper_menuitem_330_1536754696" name="物流商" parent="parent_menu_319_1536754696" sequence="10"/>
-
     </data>
 </openerp>

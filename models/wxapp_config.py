@@ -42,11 +42,9 @@ class WxappConfig(models.Model):
         else:
             return False
 
-    @api.multi
     def clean_all_token(self):
         self.env['wxapp.access_token'].search([]).unlink()
 
-    @api.multi
     def clean_all_token_window(self):
         new_context = dict(self._context) or {}
         new_context['default_info'] = "确认将所有小程序会话 token 清除？"

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 from .. import defs
 
@@ -13,8 +13,6 @@ class Shipper(models.Model):
     name = fields.Char('名称')
     code = fields.Char('编码')
 
-
-    @api.model_cr
     def init(self):
         from ..data.oe_shipper_datas import init_sql
         self.env.cr.execute(init_sql)

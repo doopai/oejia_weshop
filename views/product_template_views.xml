@@ -31,7 +31,6 @@
         </record>
         <record id="product_template_action_server_541" model="ir.actions.server">
             <field name="name">上架到小程序</field>
-            <field name="condition">True</field>
             <field name="type">ir.actions.server</field>
             <field name="model_id" ref="model_product_template"></field>
             <field name="binding_model_id" ref="model_product_template"></field>
@@ -40,7 +39,6 @@
         </record>
         <record id="product_template_action_server_542" model="ir.actions.server">
             <field name="name">从小程序下架</field>
-            <field name="condition">True</field>
             <field name="type">ir.actions.server</field>
             <field name="model_id" ref="model_product_template"></field>
             <field name="binding_model_id" ref="model_product_template"></field>

@@ -75,7 +75,6 @@
         <record id="wxapp_user_action_405" model="ir.actions.act_window">
             <field name="name">小程序用户</field>
             <field name="res_model">wxapp.user</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="help" type="html"><p></p></field>
@@ -86,6 +85,5 @@
                     ]"/>
         </record>
         <menuitem action="wxapp_user_action_405" id="wxapp_user_menuitem_323_1536754696" name="小程序用户" parent="parent_menu_319_1536754696" sequence="10"/>
-
     </data>
 </openerp>

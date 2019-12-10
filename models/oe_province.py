@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class Province(models.Model):
@@ -11,8 +11,6 @@ class Province(models.Model):
     name = fields.Char('名称')
     child_ids = fields.One2many('oe.city', 'pid', string='市')
 
-
-    @api.model_cr
     def init(self):
         from ..data.oe_province_datas import init_sql
         self.env.cr.execute(init_sql)

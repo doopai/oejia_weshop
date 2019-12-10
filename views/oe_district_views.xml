@@ -33,7 +33,6 @@
         <record id="oe_district_action_411" model="ir.actions.act_window">
             <field name="name">区</field>
             <field name="res_model">oe.district</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="help" type="html"><p></p></field>

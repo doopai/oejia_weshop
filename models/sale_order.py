@@ -1,6 +1,6 @@
 # coding=utf-8
 
-from openerp import models, fields, api
+from odoo import models, fields, api
 
 from .. import defs
 
@@ -57,23 +57,18 @@ class SaleOrder(models.Model):
             order.total = order.amount_total
             order.goods_price = order.amount_total - order.logistics_price
 
-
-    @api.multi
     def write(self, vals):
         result = super(SaleOrder, self).write(vals)
         if 'shipper_id' in vals:
             self.delivery()
         return result
 
-    @api.multi
     def delivery(self):
         self.write({'customer_status': 'unconfirmed'})
 
-    @api.multi
     def close_dialog(self):
         return {'type': 'ir.actions.act_window_close'}
 
-    @api.multi
     def delivery_window(self):
         self.ensure_one()
         return {
@@ -91,15 +86,12 @@ class SaleOrder(models.Model):
             }
         }
 
-    @api.multi
     def action_paid(self):
         self.write({'customer_status': 'pending'})
 
-    @api.multi
     def action_created(self, data=None):
         pass
 
-    @api.multi
     def check_pay_window(self):
         new_context = dict(self._context) or {}
         new_context['default_info'] = "此订单客户尚未在线支付，确认将其变为已支付状态？"
@@ -118,14 +110,11 @@ class SaleOrder(models.Model):
             'target': 'new'
         }
 
-
-    @api.multi
     def action_cancel(self):
         result = super(SaleOrder, self).action_cancel()
         self.write({'customer_status': 'closed'})
         return result
 
-    @api.multi
     def action_draft(self):
         result = super(SaleOrder, self).action_draft()
         self.write({'customer_status': 'unpaid'})

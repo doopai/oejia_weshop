@@ -20,8 +20,10 @@ class AccessToken(models.TransientModel):
 
     @api.model
     def create(self, vals):
+        vals = vals.copy()
+        sub_domain = vals.pop('sub_domain')
         record = super(AccessToken, self).create(vals)
-        record.write({'token': record.generate_token(vals['sub_domain'])})
+        record.write({'token': record.generate_token(sub_domain)})
         return record
 
     def generate_token(self, sub_domain):

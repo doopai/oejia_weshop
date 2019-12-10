@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from odoo import models, fields, api
+from odoo import models, fields
 
 
 class City(models.Model):
@@ -13,7 +13,6 @@ class City(models.Model):
     child_ids = fields.One2many('oe.district', 'pid', string='区')
 
 
-    @api.model_cr
     def init(self):
         from ..data.oe_city_datas import init_sql
         self.env.cr.execute(init_sql)

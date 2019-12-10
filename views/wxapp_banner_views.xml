@@ -43,7 +43,6 @@
         <record id="wxapp_banner_action_403" model="ir.actions.act_window">
             <field name="name">横幅</field>
             <field name="res_model">wxapp.banner</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="help" type="html"><p></p></field>
@@ -54,6 +53,5 @@
                     ]"/>
         </record>
         <menuitem action="wxapp_banner_action_403" id="wxapp_banner_menuitem_321_1536754696" name="横幅图" parent="parent_menu_327_1536754696" sequence="1" groups="oejia_weshop.group_wxapp_sale,base.group_system"/>
-
     </data>
 </openerp>

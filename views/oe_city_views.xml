@@ -34,7 +34,6 @@
         <record id="oe_city_action_410" model="ir.actions.act_window">
             <field name="name">市</field>
             <field name="res_model">oe.city</field>
-            <field name="view_type">form</field>
             <field name="view_mode">tree,form</field>
             <field name="target">current</field>
             <field name="view_ids"
